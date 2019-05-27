@@ -8,8 +8,15 @@ php:
 script:
 - echo 'Tested'
 before_deploy:
-      - git config --local user.name "artikus11"
-      - git config --local user.email "artikus.sol@gmail.ru"
-      - git tag "1.0.0"
-
-after_deploy: "release created"
+- git config --local user.name "artikus11"
+- git config --local user.email "artikus.sol@gmail.ru"
+- git tag "1.0.0"
+after_deploy: release created
+deploy:
+  provider: releases
+  api_key:
+    secure: bECt8X5W0pSlhdUATvQW9bFVMq8/VJfcXvww9zsfRG2slcGsRkTKrfleFSi/yKhzn5D5QQC12uRAEfM4OFZld5oL9ejVCdXcHLzL8ebSzvn+SMJmv9ZYXbJwuXLYJG3FIL+8lnnlWc43ZE+40UKDvLJv8Rk2q2ZhM++CAEABAGzhoSIDn2arWcNsSgnU+nZa6Sl63T+cUGs4hfXsOywDtVCrMjn2ZCT1PG6I3RLwoEM3uXFtHyv/+e+McEMHuwwvEPoNfRGpaMVFwsJR0UAvhnQSwypF3USuOsUKVgiiCNwTCJJAbh6FGCIfz5xo/L7SOtTSYwlBXPjMX8yQ6RCQchFDelXT5a0hFuDOaqz0jaqisdZMd2n/z/kH15I1U+MLAsXbssIyMFBu5VdiCaNUVMdtgUMCS7m0gF0zLrI9q7+65qa2NzEsQUzyysPz6JwNxORhaX0o+aAnws4LnsQmzDEabnRdwDlydurmQeDoNxwHI9HZtCa5MOm54W8hx4WNZQNjDQAGi1tbj++fZtqAhyYF2gn3jpHpWD9nL4xWUj1q3khSrD+mNbHmzrYx7ypk6c6Lr3GO9qpOg3SUM3zMh8eMmjN7Wd7vPLt9I9xdPtyajYK6BQ+PCPswFvoz8arMu8IoseFvru8ODWpS/MvyegsWjVSqjjYz7IKZN11HdgE=
+  file: latest.zip
+  on:
+    php: 7.0
+    repo: artikus11/artwoo-nice-shipping-payment
