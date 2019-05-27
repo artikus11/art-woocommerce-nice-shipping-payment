@@ -35,6 +35,14 @@ class AWOOSP_Front_End {
 	}
 
 
+	/**
+	 * Изменение иконок стандартных меодов оплаты
+	 *
+	 * @param $icon_html
+	 * @param $gateway_id
+	 *
+	 * @return string
+	 */
 	public function gateway_icon( $icon_html, $gateway_id ) {
 
 		switch ( $gateway_id ) {

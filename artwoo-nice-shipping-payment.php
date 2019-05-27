@@ -45,9 +45,9 @@ require __DIR__ . '/includes/class-artwoo-nice-sipping-payment.php';
  *
  * Example: <?php awoosp()->method_name(); ?>
  *
+ * @return object AWOOC_Partners class object.
  * @since 1.0.0
  *
- * @return object AWOOC_Partners class object.
  */
 if ( ! function_exists( 'awoosp' ) ) {
 

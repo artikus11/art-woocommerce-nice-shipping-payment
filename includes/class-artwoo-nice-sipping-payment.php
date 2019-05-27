@@ -33,7 +33,6 @@ class AWOOSP {
 
 	private function load_dependencies() {
 
-
 		require AWOOSP_PLUGIN_DIR . '/includes/class-awoosp-frontend.php';
 		$this->front_end = new AWOOSP_Front_End();
 
@@ -92,7 +91,6 @@ class AWOOSP {
 		if ( ! $template ) {
 			$template = $_template;
 		}
-
 
 		return $template;
 	}
