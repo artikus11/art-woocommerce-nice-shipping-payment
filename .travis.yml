@@ -1,0 +1,22 @@
+language: php
+sudo: false
+php:
+- '5.6'
+- '7.0'
+- '7.1'
+- '7.2'
+script:
+- echo 'Tested'
+before_deploy:
+- git config --local user.name "artikus11"
+- git config --local user.email "artikus.sol@gmail.ru"
+- git tag "1.0.2"
+after_deploy: release created
+deploy:
+  provider: releases
+  api_key:
+    secure: ICSBE5PYNEzrqSLvUOG53txgUnjzr+EasnCMQeNLmswrjqNQi4H5/E9WRndHNUojIFx0Gfg8W0gSCNQWOi71H3o4NVYrcwQ4eh5GcHI8PmgsyUPcQjiPyg3MRL3V0bfZtM5vUdpeEJgVJ0Z8+YH5cVQnw95DXMXpFn5E+VkD+moxQ6T2/f8xDqrQHtuhyyZPVwROCjXR2WuqAHsdVOrMaw5xHb21ZaQLVIwEJXpXtW7dwLycJ+WW7IabvaCXGt0e8ygQC2aOwbQ4ZRqLLvC73edACo7QPtTKZqoRT4kpUZy4CvOmGGeDFCSggiLEfDyLo242Z31/SHSzdMR8ZoG4F+YUBS3Yz6ZstFEHE6p4tfnnSisye10ETncXIi5cU8akx9FKIhWeyVu81UQlZLzRBAKFQ2kpXQ3Mng5rGenG4adp++/2zdHfqfHuA4tbL5IpNzJArgqD/gK95LkngJuBfw0T6IycHqEFUNa60LdcxJ/cTyLzN4ok43E6S1O4noTBQqc49ENbBd4+Ky4R6vu/En6ZQJJPBzyEppjWhHMmMHJWjIJwkdMTUGulKfrurppNbok0xLnr2eewxuR2vgop+ySFsREL+Cq5nPzI6QBp2xDwGRjfFcKoKpH8uUG25xYN8bIa4Fm4ditnCYQPE8Der1pTNhddbRcViw9BIk9/+h4=
+  file: latest.zip
+  on:
+    php: 7.0
+    repo: artikus11/art-woocommerce-nice-shipping-payment
