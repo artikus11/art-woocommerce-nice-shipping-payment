@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: ArtWoo Nice Shipping Payment
+ * Plugin Name: Art WooCommerce Nice Shipping Payment
  * Plugin URI: wpruse.ru
- * Text Domain: artwoo-nice-sipping-payment
+ * Text Domain: art-woocommerce-nice-shipping-payment
  * Domain Path: /languages
  * Description: Плагин для WooCommerce, позволяет оформить методы оплаты и доставки
- * Version: 1.0.0
+ * Version: 1.0.2
  * Author: Artem Abramovich
  * Author URI: https://wpruse.ru/
  * License: GPL-2.0+
