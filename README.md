@@ -1,4 +1,4 @@
-# ArtWoo Nice Shipping Payment
+# Art WooCommerce Nice Shipping Payment
 
 Плагин для WooCommerce, позволяет оформить методы оплаты и доставки
 
