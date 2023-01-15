@@ -5,7 +5,7 @@
  * Text Domain: art-woocommerce-nice-shipping-payment
  * Domain Path: /languages
  * Description: Плагин для WooCommerce, позволяет оформить методы оплаты и доставки
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Artem Abramovich
  * Author URI: https://wpruse.ru/
  * License: GPL-2.0+
