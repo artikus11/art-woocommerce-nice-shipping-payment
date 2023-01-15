@@ -1,0 +1,210 @@
+ul#shipping_method li:not(.elementor-widget-woocommerce-cart #shipping_method li) {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+	list-style: none outside;
+}
+
+.woocommerce #order_review table.shop_table tr.woocommerce-shipping-totals td {
+	border: inherit;
+	padding: 1rem 0;
+	text-align: left;
+}
+
+/**
+* Доставка
+*/
+.woocommerce ul#shipping_method {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 0;
+}
+
+@media only screen and (max-width: 480px) {
+	.woocommerce ul#shipping_method {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.woocommerce ul#shipping_method li,
+.woocommerce-cart #shipping_method li,
+.woocommerce-checkout #shipping_method li {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+	line-height: 1.2;
+	
+}
+
+.woocommerce #shipping_method input[type="checkbox"],
+.woocommerce #shipping_method input[type="radio"] {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.woocommerce #shipping_method input.shipping_method + label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: .75rem;
+	color: #353645;
+	text-decoration: none;
+	border: solid 1px #eaeaea;
+	background: #fff;
+	cursor: pointer;
+	margin: 0;
+	min-height: 4rem;
+	vertical-align: middle;
+}
+
+.woocommerce #shipping_method input.shipping_method + label:hover {
+	border-color: #989898
+}
+
+.woocommerce #shipping_method input.shipping_method:checked + label .amount,
+.woocommerce #shipping_method input.shipping_method:checked + label {
+	border-color: #989898;
+	background: #989898;
+	color: #fff
+}
+
+.woocommerce #shipping_method input.shipping_method + label .shipping-method-label {
+	display: block;
+	font-size: .75rem;
+	font-weight: bold;
+}
+
+.woocommerce-Price-currencySymbol {
+	font-size: .9rem
+}
+
+.amount {
+	color: #353645;
+}
+
+/**
+* Оплата
+*/
+.woocommerce #payment .wc_payment_methods {
+	list-style: none;
+	/*    padding: 0 10px*/
+}
+
+.place-order {
+	/*    padding: 0 10px*/
+}
+
+.woocommerce #payment .wc_payment_methods li {
+	/*display: inline-block;
+	vertical-align: top;*/
+	position: relative;
+	margin-bottom: -3px;
+}
+
+
+.woocommerce #payment input[type="radio"] {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+
+.woocommerce #payment li label {
+	width: 100%;
+	/*border: 1px solid #989898;*/
+	background-color: inherit;
+	transition: all 250ms ease;
+	will-change: transition;
+	display: inline-block;
+	text-align: left;
+	cursor: pointer;
+	position: relative;
+	padding: 1rem 1.25rem;
+	/*margin: 0.5rem 0 0;*/
+	line-height: 1;
+	overflow: hidden;
+	border-radius: 2px;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+
+.woocommerce #payment li label:hover {
+	background-color: #989898;
+	color: #fff;
+}
+
+.woocommerce #payment li label:hover svg {
+	fill: #fff;
+}
+
+.woocommerce #payment li label img {
+	width: 20px;
+	filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(65deg) brightness(100%) contrast(82%);
+	vertical-align: top;
+}
+
+.woocommerce #payment li label svg {
+	width: 18px;
+	height: auto;
+}
+
+.woocommerce #payment li input[type="radio"]:checked + label {
+	background-color: #989898;
+	color: #fff;
+}
+
+.woocommerce #payment li input[type="radio"]:checked + label svg {
+	fill: #fff;
+}
+
+.woocommerce #payment li label .payment_box {
+	font-weight: normal;
+	margin-top: 15px;
+}
+
+.woocommerce #payment li label .label-title {
+	vertical-align: text-top;
+}
+
+.woocommerce-checkout #payment ul.payment_methods .wc_payment_method > input[type=radio]:first-child:checked + label:before,
+.woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label:before,
+#payment .payment_methods > .wc_payment_method > label::before, #payment .payment_methods > .woocommerce-PaymentMethod > label::before {
+	display: none;
+}
+
+#order_review #place_order {
+	padding: 1rem 1rem;
+	font-size: 1.2rem;
+	line-height: 1.3333;
+	font-weight: bold;
+	border-radius: 2px;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	background: #989898;
+	border: 1px solid #989898;
+	transition: all 250ms ease;
+}
+
+#order_review #place_order:hover {
+	background: #989898;
+	border: 1px solid #989898;
+}

@@ -13,8 +13,8 @@
  * the readme will list any important changes.
  *
  * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.6.0
+ * @package WooCommerce\Templates
+ * @version 7.3.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -49,14 +49,14 @@ $calculator_text          = '';
 					if ( $formatted_destination ) {
 						// Translators: $s shipping destination.
 						printf( esc_html__( 'Shipping to %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' );
-						$calculator_text = __( 'Change address', 'woocommerce' );
+						$calculator_text = esc_html__( 'Change address', 'woocommerce' );
 					} else {
 						echo wp_kses_post( apply_filters( 'woocommerce_shipping_estimate_html', __( 'Shipping options will be updated during checkout.', 'woocommerce' ) ) );
 					}
 					?>
 				</p>
 			<?php endif; ?>
-			<?php
+		<?php
 		elseif ( ! $has_calculated_shipping || ! $formatted_destination ) :
 			echo wp_kses_post( apply_filters( 'woocommerce_shipping_may_be_available_html', __( 'Enter your address to view shipping options.', 'woocommerce' ) ) );
 		elseif ( ! is_cart() ) :
