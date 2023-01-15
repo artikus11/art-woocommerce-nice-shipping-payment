@@ -11,8 +11,11 @@
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt Text Domain: Domain Path:
  *
- * WC requires at least: 3.3.0
- * WC tested up to: 3.6
+ * WC requires at least: 5.2.0
+ * WC tested up to: 6.1
+ *
+ * RequiresWP: 5.5
+ * RequiresPHP: 7.4
  *
  * Copyright Artem Abramovich
  */
@@ -23,38 +26,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $plugin_data = get_file_data(
 	__FILE__,
-	array(
+	[
 		'ver'  => 'Version',
 		'name' => 'Plugin Name',
-	)
+	]
 );
 
-define( 'AWOOSP_PLUGIN_DIR', __DIR__ );
-define( 'AWOOSP_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
-define( 'AWOOSP_PLUGIN_FILE', plugin_basename( __FILE__ ) );
+const AWNSP_PLUGIN_DIR = __DIR__;
+define( 'AWNSP_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
+define( 'AWNSP_PLUGIN_FILE', plugin_basename( __FILE__ ) );
 
-define( 'AWOOSP_PLUGIN_VER', $plugin_data['ver'] );
-define( 'AWOOSP_PLUGIN_NAME', $plugin_data['name'] );
+define( 'AWNSP_PLUGIN_VER', $plugin_data['ver'] );
+define( 'AWNSP_PLUGIN_NAME', $plugin_data['name'] );
 
-require __DIR__ . '/includes/class-artwoo-nice-sipping-payment.php';
+require __DIR__ . '/classes/class-main.php';
 
 /**
- * The main function responsible for returning the AWOOSP object.
- *
- * Use this function like you would a global variable, except without needing to declare the global.
- *
- * Example: <?php awoosp()->method_name(); ?>
  *
  * @return object AWOOC_Partners class object.
  * @since 1.0.0
  *
  */
-if ( ! function_exists( 'awoosp' ) ) {
+if ( ! function_exists( 'awnsp' ) ) {
 
-	function awoosp() {
+	function awnsp() {
 
-		return AWOOSP::instance();
+		return \Art\AWNSP\Main::instance();
 	}
 }
 
-$GLOBALS['awoosp'] = awoosp();
+awnsp();

@@ -1,39 +1,54 @@
-<?php // @codingStandardsIgnoreLine
+<?php
+
+namespace Art\AWNSP;
 
 /**
- * Class AWOOSP_Front_End
+ * Class Front
  *
  * @author Artem Abramovich
  * @since  1.0.0
  */
-class AWOOSP_Front_End {
+class Front {
+
+	protected Main $main;
+
+
+	public function __construct( $main ) {
+
+		$this->main = $main;
+
+	}
+
 
 	/**
 	 * Constructor.
 	 *
 	 * @since 1.8.0
 	 */
-	public function __construct() {
+	public function init_hooks(): void {
 
-		/**
-		 * Base hooks
-		 */
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_script_style' ], 100 );
+		add_filter( 'woocommerce_locate_template', [ $this, 'modify_templates' ], 1, 3 );
 		add_filter( 'woocommerce_gateway_icon', [ $this, 'gateway_icon' ], 10, 2 );
 
 	}
+	public function modify_templates( $template, $template_name, $template_path ) {
 
 
-	/**
-	 * Подключаем нужные стили и скрипты
-	 */
-	public function enqueue_script_style() {
+		if ( 'cart/cart-shipping.php' === $template_name ) {
 
-		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			$template = $this->main->get_template( 'cart/cart-shipping.php' );
 
-		wp_enqueue_style( 'awoosp-styles', AWOOSP_PLUGIN_URI . 'assets/css/awoosp-styles' . $suffix . '.css', array(), AWOOSP_PLUGIN_VER );
+		}
+
+		if ( 'checkout/payment-method.php' === $template_name ) {
+
+			$template = $this->main->get_template( 'checkout/payment-method.php' );
+
+		}
+
+
+		return $template;
 	}
-
 
 	/**
 	 * Изменение иконок стандартных меодов оплаты
@@ -43,7 +58,7 @@ class AWOOSP_Front_End {
 	 *
 	 * @return string
 	 */
-	public function gateway_icon( $icon_html, $gateway_id ) {
+	public function gateway_icon( $icon_html, $gateway_id ): string {
 
 		switch ( $gateway_id ) {
 			case 'paypal':
