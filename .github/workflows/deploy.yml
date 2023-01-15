@@ -50,16 +50,3 @@ jobs:
           asset_path: ${{ github.workflow }}.zip
           asset_name: ${{ github.workflow }}.zip
           asset_content_type: application/zip
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: 70.32.23.102
-          username: deploy_stage@stage3.ainsys.a2hosted.com
-          password: Tt6Q{wT?U#L[
-          server-dir: /wp-content/plugins/ainsys-connector-master/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github*/**
-            **/node_modules/**
-            **/src/**
